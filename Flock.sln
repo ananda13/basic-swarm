@@ -1,0 +1,23 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{EC9C8D80-D0C5-8B80-02B9-C68148F24A4C}") = "Flock", "Assembly-CSharp.csproj", "{CC36740C-23D6-3494-3DEE-AC13BD26D85D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC36740C-23D6-3494-3DEE-AC13BD26D85D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC36740C-23D6-3494-3DEE-AC13BD26D85D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC36740C-23D6-3494-3DEE-AC13BD26D85D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC36740C-23D6-3494-3DEE-AC13BD26D85D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal

@@ -6,13 +6,18 @@ public class GlobalFlock : MonoBehaviour {
 
 	public GameObject fishPrefab;
 	public GameObject goalPrefab;
+	public GameObject predatorPrefab;
 	public float goalSpeed = 1.0f;
 	private Vector3 newGoalPos = Vector3.zero;
 
 	public static float tankSize = 5.0f; //meters
+	public static float tankHeight = 4.0f; 
 
-	static int numFish = 100;
+	static int numFish = 50;
+	static int numPredators = 1;
+
 	public static GameObject[] allFish = new GameObject[numFish];
+	public static GameObject[] allPredators = new GameObject[numPredators];
 
 	//Goal position that the flock swims towards
 	public static Vector3 goalPos = Vector3.zero;
@@ -24,14 +29,24 @@ public class GlobalFlock : MonoBehaviour {
 		{
 			//Spawn them at random positions
 			Vector3 pos = new Vector3 (Random.Range (-tankSize, tankSize),
-				              Random.Range (-tankSize, tankSize),
+				              Random.Range (0.1f, tankHeight),
 				              Random.Range (-tankSize, tankSize));
 
 			//Instantiate the array of fish
 			allFish[i] = (GameObject)Instantiate (fishPrefab, pos, Quaternion.identity);
 		}
 
-		
+		for (int i=0 ; i < numPredators ; i++)
+		{
+
+			//Spawn them at random positions
+			Vector3 pos = new Vector3 (Random.Range (-tankSize, tankSize),
+				Random.Range (0f, tankHeight),
+				Random.Range (-tankSize, tankSize));
+
+			//Instantiate the array of fish
+			allPredators[i] = (GameObject)Instantiate (predatorPrefab, pos, Quaternion.identity);
+		}
 	}
 	
 	// Update is called once per frame
@@ -43,7 +58,7 @@ public class GlobalFlock : MonoBehaviour {
 		if (Random.Range (0, 100) < 1) 
 		{
 			newGoalPos = new Vector3 (Random.Range (-tankSize, tankSize),
-				Random.Range (-tankSize, tankSize),
+				Random.Range (0.1f, tankHeight),
 				Random.Range (-tankSize, tankSize));			
 
 		}
